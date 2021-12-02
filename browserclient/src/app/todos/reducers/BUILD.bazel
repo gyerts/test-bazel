@@ -1,0 +1,11 @@
+load("//browserclient/tools:typescript.bzl", "ts_project")
+
+package(default_visibility = ["//:__subpackages__"])
+
+ts_project(
+    name = "reducers",
+    srcs = glob(["*.ts"]),
+    deps = [
+        "@npm//@ngrx/store",
+    ],
+)
