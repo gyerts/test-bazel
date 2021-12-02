@@ -7,7 +7,7 @@ exports_files(["favicon.ico"])
 k8s_deploy(
     name = "deploy",
     images = {
-        "gcr.io/internal-200822/src:nodejs_image": "//browserclient/src:image",
+        "gcr.io/internal-200822/src:nodejs_image": "//src:image",
     },
     template = ":deployment.yaml",
 )

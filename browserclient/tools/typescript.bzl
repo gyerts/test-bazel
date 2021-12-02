@@ -2,7 +2,7 @@
 
 load("@npm//@bazel/typescript:index.bzl", _ts_project = "ts_project")
 
-def ts_project(name, tsconfig = "//browserclient/src:tsconfig", **kwargs):
+def ts_project(name, tsconfig = "//src:tsconfig", **kwargs):
     _ts_project(
         name = name,
         tsconfig = tsconfig,
@@ -11,7 +11,7 @@ def ts_project(name, tsconfig = "//browserclient/src:tsconfig", **kwargs):
         **kwargs
     )
 
-def ts_test_project(name, tsconfig = "//browserclient/src:tsconfig-test", deps = [], **kwargs):
+def ts_test_project(name, tsconfig = "//src:tsconfig-test", deps = [], **kwargs):
     _ts_project(
         name = name,
         testonly = 1,

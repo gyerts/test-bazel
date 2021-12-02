@@ -17,20 +17,20 @@
         "build": {
           "builder": "@bazel/angular:build",
           "options": {
-            "targetLabel": "//browserclient/src:prodapp",
+            "targetLabel": "//src:prodapp",
             "bazelCommand": "build"
           }
         },
         "serve": {
           "builder": "@bazel/angular:build",
           "options": {
-            "targetLabel": "//browserclient/src:devserver",
+            "targetLabel": "//src:devserver",
             "bazelCommand": "run",
             "watch": true
           },
           "configurations": {
             "production": {
-              "targetLabel": "//browserclient/src:prodserver"
+              "targetLabel": "//src:prodserver"
             }
           }
         },
@@ -44,7 +44,7 @@
           "builder": "@bazel/angular:build",
           "options": {
             "bazelCommand": "test",
-            "targetLabel": "//browserclient/src/app/..."
+            "targetLabel": "//src/app/..."
           }
         },
         "lint": {

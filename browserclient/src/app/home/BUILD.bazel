@@ -1,4 +1,4 @@
-load("//browserclient/tools:angular_ts_project.bzl", "ng_ts_project")
+load("//tools:angular_ts_project.bzl", "ng_ts_project")
 
 package(default_visibility = ["//:__subpackages__"])
 

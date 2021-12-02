@@ -1,5 +1,5 @@
 load("@build_bazel_rules_nodejs//:index.bzl", "js_library")
-load("//browserclient/tools:typescript.bzl", "ts_project")
+load("//tools:typescript.bzl", "ts_project")
 
 package(default_visibility = ["//:__subpackages__"])
 

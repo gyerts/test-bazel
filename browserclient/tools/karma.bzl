@@ -72,7 +72,7 @@ _generate_karma_config = rule(
             doc = """the karma config template""",
             cfg = "host",
             allow_single_file = True,
-            default = Label("//browserclient/tools:karma.conf.js"),
+            default = Label("//tools:karma.conf.js"),
         ),
     },
     outputs = {
