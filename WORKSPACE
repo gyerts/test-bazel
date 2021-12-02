@@ -39,7 +39,7 @@ http_archive(
     patch_args = ["-p1"],
     patches = [
         # Updates @bazel/work dep to 4.0.0 inside rules_sass so it is compatible
-        "//:io_bazel_rules_sass.patch",
+        "//browserclient:io_bazel_rules_sass.patch",
     ],
     sha256 = "5313032124ff191eed68efcfbdc6ee9b5198093b2b80a8e640ea34feabbffc69",
     strip_prefix = "rules_sass-1.34.0",
@@ -59,8 +59,8 @@ node_repositories(
 # Setup the Node.js toolchain & install our npm dependencies into @npm
 yarn_install(
     name = "npm",
-    package_json = "//:package.json",
-    yarn_lock = "//:yarn.lock",
+    package_json = "//browserclient:package.json",
+    yarn_lock = "//browserclient:yarn.lock",
 )
 
 # Load @bazel/protractor dependencies

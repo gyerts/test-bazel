@@ -65,13 +65,13 @@
         "typescript": "<4.4.0"
     },
     "scripts": {
-        "build": "bazel build //src:prodapp",
-        "serve": "ibazel run //src:devserver",
+        "build": "bazel build //browserclient/src:prodapp",
+        "serve": "ibazel run //browserclient/src:devserver",
         "deploy": "ng build && firebase deploy",
-        "serve-prod": "bazel run //src:prodserver",
-        "e2e": "bazel test //e2e:all",
-        "test": "bazel test //src/...",
-        "benchmark": "ibazel-benchmark-runner //src:devserver src/app/hello-world/hello-world.component.ts --url=http://localhost:5432",
+        "serve-prod": "bazel run //browserclient/src:prodserver",
+        "e2e": "bazel test //browserclient/e2e:all",
+        "test": "bazel test //browserclient/src/...",
+        "benchmark": "ibazel-benchmark-runner //browserclient/src:devserver browserclient/src/app/hello-world/hello-world.component.ts --url=http://localhost:5432",
         "postinstall": "node_modules/.bin/ngcc --async --properties fesm2015",
         "generate": "node tools/generator/index.js",
         "generate:clean": "node tools/generator/index.js --clean"

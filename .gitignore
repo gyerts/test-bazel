@@ -4,4 +4,3 @@ bazel-new-browserclient
 bazel-out
 bazel-testlogs
 node_modules/
-dist/

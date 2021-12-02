@@ -1,7 +1,7 @@
 load("@io_bazel_rules_sass//:defs.bzl", "multi_sass_binary")
-load("//tools:angular_ts_project.bzl", "ng_ts_project")
-load("//tools:karma.bzl", "karma_web_test_suite")
-load("//tools:typescript.bzl", "ts_test_project")
+load("//browserclient/tools:angular_ts_project.bzl", "ng_ts_project")
+load("//browserclient/tools:karma.bzl", "karma_web_test_suite")
+load("//browserclient/tools:typescript.bzl", "ts_test_project")
 
 package(default_visibility = ["//:__subpackages__"])
 
@@ -25,8 +25,8 @@ ng_ts_project(
         ":hello-world-styles",
     ],
     deps = [
-        "//src/lib/shorten",
-        "//src/shared/material",
+        "//browserclient/src/lib/shorten",
+        "//browserclient/src/shared/material",
         "@npm//@angular/core",
         "@npm//@angular/forms",
         "@npm//@angular/router",
@@ -39,7 +39,7 @@ ts_test_project(
     srcs = glob(["*.spec.ts"]),
     deps = [
         ":hello-world",
-        "//src/shared/material",
+        "//browserclient/src/shared/material",
         "@npm//@angular/core",
         "@npm//@angular/platform-browser",
     ],
@@ -57,11 +57,11 @@ karma_web_test_suite(
         "@io_bazel_rules_webtesting//browsers:firefox-local",
     ],
     specs = [
-        "//src:initialize_testbed.js",
+        "//browserclient/src:initialize_testbed.js",
         ":test_lib",
     ],
     deps = [
         ":test_lib",
-        "//src:initialize_testbed",
+        "//browserclient/src:initialize_testbed",
     ],
 )

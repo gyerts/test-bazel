@@ -1,5 +1,5 @@
 load("@npm//@bazel/protractor:index.bzl", "protractor_web_test_suite")
-load("//tools:typescript.bzl", "ts_test_project")
+load("//browserclient/tools:typescript.bzl", "ts_test_project")
 
 ts_test_project(
     name = "e2e",
@@ -15,7 +15,7 @@ protractor_web_test_suite(
         "src/app.po.js",
     ],
     on_prepare = ":protractor.on-prepare.js",
-    server = "//src:prodserver",
+    server = "//browserclient/src:prodserver",
     deps = [":e2e"],
 )
 
@@ -26,6 +26,6 @@ protractor_web_test_suite(
         "src/app.po.js",
     ],
     on_prepare = ":protractor.on-prepare.js",
-    server = "//src:devserver",
+    server = "//browserclient/src:devserver",
     deps = [":e2e"],
 )

@@ -1,4 +1,4 @@
-load("//tools:angular_ts_project.bzl", "ng_ts_project")
+load("//browserclient/tools:angular_ts_project.bzl", "ng_ts_project")
 
 package(default_visibility = ["//:__subpackages__"])
 
@@ -9,11 +9,11 @@ ng_ts_project(
     ),
     angular_assets = ["app.component.html"],
     deps = [
-        "//src/app/hello-world",
-        "//src/app/home",
-        "//src/app/todos",
-        "//src/app/todos/reducers",
-        "//src/shared/material",
+        "//browserclient/src/app/hello-world",
+        "//browserclient/src/app/home",
+        "//browserclient/src/app/todos",
+        "//browserclient/src/app/todos/reducers",
+        "//browserclient/src/shared/material",
         "@npm//@angular/common",
         "@npm//@angular/core",
         "@npm//@angular/platform-browser",

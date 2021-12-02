@@ -48,7 +48,7 @@ First we'll run the development server:
 ```bash
 $ ng serve
 # or
-$ ibazel run //src:devserver
+$ ibazel run //browserclient/src:devserver
 ```
 
 This runs in "watch mode", which means it will watch any files that are inputs to the `devserver`, and when they change it will ask Bazel to re-build them.
@@ -68,7 +68,7 @@ We can also run all the unit tests:
 ```bash
 $ ng test
 # or
-$ bazel test //src/...
+$ bazel test //browserclient/src/...
 ```
 
 Or run the end-to-end tests:
@@ -93,7 +93,7 @@ This example uses Rollup and Uglify, but other bundlers can be integrated with B
 ```bash
 $ ng serve --prod
 # or
-$ bazel run //src:prodserver
+$ bazel run //browserclient/src:prodserver
 ```
 
 ### Code splitting
@@ -101,7 +101,7 @@ $ bazel run //src:prodserver
 The production bundle is code split and routes such as `/` and `/todos` are lazy loaded.
 Code splitting is handled by the rollup_bundle rule which now supports the new code splitting feature in rollup.
 
-Note: code splitting is _not_ supported in development mode yet so the `//src:devserver` target does not serve a code split bundle.
+Note: code splitting is _not_ supported in development mode yet so the `//browserclient/src:devserver` target does not serve a code split bundle.
 The dynamic `import()` statements will resolve to modules that are served in the initial JS payload.
 
 ## Npm dependencies
