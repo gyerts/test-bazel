@@ -24,13 +24,13 @@
 
             // Add all possible bazel-out directories
             // See https://github.com/microsoft/TypeScript/issues/37257
-            "./bazel-out/darwin-dbg/bin/src",
-            "./bazel-out/darwin-fastbuild/bin/src",
-            "./bazel-out/darwin_arm64-fastbuild/bin/src",
-            "./bazel-out/k8-dbg/bin/src",
-            "./bazel-out/k8-fastbuild/bin/src",
-            "./bazel-out/x64_windows-dbg/bin/src",
-            "./bazel-out/x64_windows-fastbuild/bin/src"
+            "../bazel-out/darwin-fastbuild/browserclient/bin/src",
+            "../bazel-out/darwin-dbg/browserclient/bin/src",
+            "../bazel-out/darwin_arm64-fastbuild/browserclient/bin/src",
+            "../bazel-out/k8-dbg/bin/src",
+            "../bazel-out/k8-fastbuild/browserclient/bin/src",
+            "../bazel-out/x64_windows-dbg/bin/src",
+            "../bazel-out/x64_windows-fastbuild/bin/src"
         ]
     }
 }

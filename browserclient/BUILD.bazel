@@ -21,13 +21,11 @@ sh_test(
 
 ts_config(
     name = "target-tsconfig",
-    src = "//browserclient:tsconfig.json",
-    visibility = ["//:__subpackages__"],
+    src = ":tsconfig.json",
 )
 
 ts_config(
     name = "target-tsconfig-test",
-    src = "//browserclient:tsconfig-test.json",
-    deps = ["//browserclient:target-tsconfig"],
-    visibility = ["//:__subpackages__"],
+    src = ":tsconfig-test.json",
+    deps = [":target-tsconfig"],
 )
