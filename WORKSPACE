@@ -59,8 +59,9 @@ node_repositories(
 # Setup the Node.js toolchain & install our npm dependencies into @npm
 yarn_install(
     name = "npm",
-    package_json = "//browserclient:package.json",
-    yarn_lock = "//browserclient:yarn.lock",
+    package_json = "//:package.json",
+    yarn_lock = "//:yarn.lock",
+    package_path = "browserclient",
 )
 
 # Load @bazel/protractor dependencies

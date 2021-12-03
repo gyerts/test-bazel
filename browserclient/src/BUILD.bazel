@@ -5,7 +5,6 @@ load("@io_bazel_rules_sass//:defs.bzl", "sass_binary")
 load("@npm//@babel/cli:index.bzl", "babel")
 load("@npm//@bazel/rollup:index.bzl", "rollup_bundle")
 load("@npm//@bazel/terser:index.bzl", "terser_minified")
-load("@npm//@bazel/typescript:index.bzl", "ts_config")
 load("@npm//history-server:index.bzl", "history_server")
 load("@npm//html-insert-assets:index.bzl", "html_insert_assets")
 load("//browserclient/tools:angular_ts_project.bzl", "ng_ts_project")
@@ -13,17 +12,6 @@ load("//browserclient/tools:typescript.bzl", "ts_test_project")
 load("//browserclient/tools:ngsw_config.bzl", "ngsw_config")
 
 package(default_visibility = ["//:__subpackages__"])
-
-ts_config(
-    name = "tsconfig",
-    src = "tsconfig.json",
-)
-
-ts_config(
-    name = "tsconfig-test",
-    src = "tsconfig-test.json",
-    deps = [":tsconfig"],
-)
 
 # Run the sass compiler to output "styles.css"
 # TODO(alexeagle): demonstrate the sass_library rule too
@@ -50,11 +38,9 @@ ng_ts_project(
         "main.prod.ts",
     ],
     deps = [
-        "//browserclient/src/app",
+        "//browserclient/src/app:app",
         "@npm//@angular/core",
         "@npm//@angular/platform-browser",
-        "@npm//@angular/router",
-        "@npm//@ngrx/store",
     ],
 )
 
@@ -190,7 +176,7 @@ pkg_web(
         ":bundle-es5.min",
         # each injected index file should be listed here
         ":inject_scripts_for_prod",
-        "//browserclient/src/assets",
+        "assets",
         ":robots.txt",
         # Service worker
         "@npm//:node_modules/@angular/service-worker/ngsw-worker.js",

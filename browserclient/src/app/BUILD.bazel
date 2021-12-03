@@ -4,22 +4,14 @@ package(default_visibility = ["//:__subpackages__"])
 
 ng_ts_project(
     name = "app",
-    srcs = glob(
-        include = ["*.ts"],
-    ),
+    srcs = [
+        "app.module.ts",
+        "app.component.ts",
+    ],
     angular_assets = ["app.component.html"],
     deps = [
-        "//browserclient/src/app/hello-world",
-        "//browserclient/src/app/home",
-        "//browserclient/src/app/todos",
-        "//browserclient/src/app/todos/reducers",
-        "//browserclient/src/shared/material",
         "@npm//@angular/common",
         "@npm//@angular/core",
         "@npm//@angular/platform-browser",
-        "@npm//@angular/router",
-        "@npm//@angular/service-worker",
-        "@npm//@ngrx/store",
-        "@npm//rxjs",
     ],
 )
